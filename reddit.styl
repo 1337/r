@@ -91,7 +91,7 @@ a
     box-shadow: $standard-shadow
     box-sizing: border-box
     display: block
-    font-family: 'Open Sans', Helveetica, Arial, sans-serif
+    font-family: 'Roboto', Helveetica, Arial, sans-serif
     font-size: 13px
     margin: 15px auto
     padding: $post-padding
@@ -129,7 +129,7 @@ a
     .reply
         background-color: #f6f6f6
         padding: 10px 0 0px 5px
-        border-left: 3px #dddddd solid
+        border-left: 2px #ddd solid
         text-overflow: ellipsis
         overflow-x: hidden
         overflow-y: hidden
@@ -226,25 +226,28 @@ a
     .container
         margin-left: 20px
 
-.next-post, .read-post
-    cursor: pointer
-    box-shadow: $standard-shadow
-    display: inline-block
+.fabs
+    bottom: 0
     position: fixed
-    background: #4AA559
-    color: #fff
-    border-radius: 50px
-    font-weight: bold
-    font-size: 20px
-    padding: 15px
+    text-align: center
+    width: 100%
 
-.next-post
-    bottom: 15px
-    right: 15px
+    .next-post, .read-post
+        cursor: pointer
+        box-shadow: $standard-shadow
+        display: inline-block
+        background: #4AA559
+        color: #fff
+        border-radius: 50px
+        font-weight: bold
+        font-size: 20px
+        margin: 10px
+        padding: 12px
 
-.read-post
-    bottom: 85px
-    right: 15px
+    .read-post
+        margin-right: 5px
+    .next-post
+        margin-left: 5px
 
 #sidebar-wrapper
     background: #f6f6f6

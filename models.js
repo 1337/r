@@ -223,6 +223,11 @@
         } else {
           window.lastPostId = _.last(posts).id;
         }
+        _.each(posts, function(post) {
+          if (post.subreddit === 'unexpectedjihad') {
+            return post.subreddit = 'videos';
+          }
+        });
         return posts;
       };
 

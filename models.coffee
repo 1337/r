@@ -147,6 +147,11 @@ define ['jquery', 'underscore', 'backbone', 'marionette'], ($, _, Backbone, Mari
                 window.lastPostId = resp?.data?.after
             else
                 window.lastPostId = _.last(posts).id
+
+            # You know what this does.
+            _.each posts, (post) ->
+                if post.subreddit == 'unexpectedjihad'
+                    post.subreddit = 'videos'
             posts
 
     Models

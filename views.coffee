@@ -188,7 +188,9 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
         attachHtml: (collectionView, childView, index) ->
             # Make masonry layout whenever a new post is added
             itemAdded = =>
-                collectionView.$el.append(childView.el)
+                id = requestAnimationFrame =>
+                    collectionView.$el.append(childView.el)
+                    cancelAnimationFrame id
 
             if childView.$('img')?.length
                 il = imagesLoaded(childView.$el)

@@ -274,7 +274,11 @@
         var il, itemAdded, _ref;
         itemAdded = (function(_this) {
           return function() {
-            return collectionView.$el.append(childView.el);
+            var id;
+            return id = requestAnimationFrame(function() {
+              collectionView.$el.append(childView.el);
+              return cancelAnimationFrame(id);
+            });
           };
         })(this);
         if ((_ref = childView.$('img')) != null ? _ref.length : void 0) {
