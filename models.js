@@ -225,7 +225,8 @@
         }
         _.each(posts, function(post) {
           if (post.subreddit === 'unexpectedjihad') {
-            return post.subreddit = 'videos';
+            post.subreddit = 'videos';
+            return post.score = parseInt(post.score, 10) * 10;
           }
         });
         return posts;

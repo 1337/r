@@ -152,6 +152,7 @@ define ['jquery', 'underscore', 'backbone', 'marionette'], ($, _, Backbone, Mari
             _.each posts, (post) ->
                 if post.subreddit == 'unexpectedjihad'
                     post.subreddit = 'videos'
+                    post.score = parseInt(post.score, 10) * 10
             posts
 
     Models
