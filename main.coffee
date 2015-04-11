@@ -36,6 +36,7 @@ require.config
         ],
         'jquery-removestyle': 'jquery.removestyle',
         'jquery-scrollstopped': 'jquery.scrollstopped',
+        'jquery-scrolltop': 'jquery.scrolltop',
         'jquery-touchswipe': [
             'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min',
             'jquery.touchswipe'
@@ -66,6 +67,7 @@ require.config
                 'modernizr',
                 'bootstrap', 'uri', 'requestanimationframe',
                 'jquery-viewport', 'jquery-removestyle', 'jquery-scrollstopped',
+                'jquery-scrolltop',
                 'reddit_related', 'underscore-mixins'
             ]
         'backbone':
@@ -81,6 +83,8 @@ require.config
         'jquery-removestyle':
             deps: ['jquery']
         'jquery-scrollstopped':
+            deps: ['jquery']
+        'jquery-scrolltop':
             deps: ['jquery']
         'jquery-touchswipe':
             deps: ['jquery']

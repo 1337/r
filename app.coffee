@@ -164,7 +164,8 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'Models', 'Views', 'Co
     $('.next-post', $document).on 'click', ->
         try
             scrollTop = $('.post:below-the-fold').first().offset().top - 60
-            $window.scrollTop(scrollTop)
+            # $("html, body").animate(scrollTop: scrollTop + "px")
+            ($window.wScrollTop or $window.scrollTop)(scrollTop)
         catch e  # :(
             console.error e
 

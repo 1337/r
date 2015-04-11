@@ -22,6 +22,7 @@
       'jquery': ['https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min', 'jquery/dist/jquery.min'],
       'jquery-removestyle': 'jquery.removestyle',
       'jquery-scrollstopped': 'jquery.scrollstopped',
+      'jquery-scrolltop': 'jquery.scrolltop',
       'jquery-touchswipe': ['https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min', 'jquery.touchswipe'],
       'jquery-viewport': 'jquery.viewport.min',
       'marionette': ['https://cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.3.2/backbone.marionette.min', 'marionette/lib/backbone.marionette'],
@@ -34,7 +35,7 @@
     },
     shim: {
       'app': {
-        deps: ['modernizr', 'bootstrap', 'uri', 'requestanimationframe', 'jquery-viewport', 'jquery-removestyle', 'jquery-scrollstopped', 'reddit_related', 'underscore-mixins']
+        deps: ['modernizr', 'bootstrap', 'uri', 'requestanimationframe', 'jquery-viewport', 'jquery-removestyle', 'jquery-scrollstopped', 'jquery-scrolltop', 'reddit_related', 'underscore-mixins']
       },
       'backbone': {
         deps: ['underscore'],
@@ -54,6 +55,9 @@
         deps: ['jquery']
       },
       'jquery-scrollstopped': {
+        deps: ['jquery']
+      },
+      'jquery-scrolltop': {
         deps: ['jquery']
       },
       'jquery-touchswipe': {

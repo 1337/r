@@ -230,7 +230,7 @@
       var e, scrollTop;
       try {
         scrollTop = $('.post:below-the-fold').first().offset().top - 60;
-        return $window.scrollTop(scrollTop);
+        return ($window.wScrollTop || $window.scrollTop)(scrollTop);
       } catch (_error) {
         e = _error;
         return console.error(e);
