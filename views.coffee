@@ -215,6 +215,7 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
         ui:
             'minscore': '#minscore'
             'autoload': '#autoload'
+            'filterread': '#filterread'
             'nightmode': '#nightmode'
             'preloadpages': '#preloadpages'
             'showcomments': '#showcomments'
@@ -228,6 +229,8 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
                 settings.get('preloadpages', 4))
             @ui.autoload.attr('checked',
                 settings.get('autoload', false))
+            @ui.filterread.attr('checked',
+                settings.get('filterread', false))
             @ui.nightmode.attr('checked',
                 settings.get('nightmode', false))
             @ui.showcomments.attr('checked',
@@ -238,6 +241,7 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
                 settings.set 'minscore', @ui.minscore.val()
                 settings.set 'preloadpages', @ui.preloadpages.val()
                 settings.set 'autoload', @ui.autoload.prop('checked')
+                settings.set 'filterread', @ui.filterread.prop('checked')
                 settings.set 'nightmode', @ui.nightmode.prop('checked')
                 settings.set 'showcomments', @ui.showcomments.prop('checked')
 

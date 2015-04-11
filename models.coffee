@@ -1,4 +1,4 @@
-define ['jquery', 'underscore', 'backbone', 'marionette'], ($, _, Backbone, Marionette) ->
+define ['jquery', 'underscore', 'backbone', 'marionette', 'chance'], ($, _, Backbone, Marionette, chance) ->
 
     Models = {}
 
@@ -34,6 +34,20 @@ define ['jquery', 'underscore', 'backbone', 'marionette'], ($, _, Backbone, Mari
                 return item
             return undefined
         ))
+
+    filterRead = (posts=[]) ->
+        read = settings.get('readPosts', [])
+        thing = []
+        for post in posts
+            postId = (post.id or post.data.id)
+            if postId in read
+                console.debug "FILTERED #{postId}"
+            else
+                thing.push post
+
+        read.push.apply(read, thing)
+        settings.set('readPosts', _.pluck(_.uniq(read), 'id'))
+        thing
 
 
     # Read only by restricting all calls to 'read'
@@ -153,6 +167,9 @@ define ['jquery', 'underscore', 'backbone', 'marionette'], ($, _, Backbone, Mari
                 if post.subreddit == 'unexpectedjihad'
                     post.subreddit = 'videos'
                     post.score = parseInt(post.score, 10) * 10
+
+            if settings.get('filterread')
+                posts = filterRead(posts)  # Also registers reading them for now
             posts
 
     Models

@@ -343,6 +343,7 @@
       SettingsView.prototype.ui = {
         'minscore': '#minscore',
         'autoload': '#autoload',
+        'filterread': '#filterread',
         'nightmode': '#nightmode',
         'preloadpages': '#preloadpages',
         'showcomments': '#showcomments'
@@ -353,6 +354,7 @@
         this.ui.minscore.val(settings.get('minscore', 20));
         this.ui.preloadpages.val(settings.get('preloadpages', 4));
         this.ui.autoload.attr('checked', settings.get('autoload', false));
+        this.ui.filterread.attr('checked', settings.get('filterread', false));
         this.ui.nightmode.attr('checked', settings.get('nightmode', false));
         return this.ui.showcomments.attr('checked', settings.get('showcomments', true));
       };
@@ -363,6 +365,7 @@
           settings.set('minscore', this.ui.minscore.val());
           settings.set('preloadpages', this.ui.preloadpages.val());
           settings.set('autoload', this.ui.autoload.prop('checked'));
+          settings.set('filterread', this.ui.filterread.prop('checked'));
           settings.set('nightmode', this.ui.nightmode.prop('checked'));
           settings.set('showcomments', this.ui.showcomments.prop('checked'));
           return window.location.reload();
