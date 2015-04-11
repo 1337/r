@@ -226,15 +226,24 @@
         return window.location.reload();
       }
     });
-    $('.next-post', $document).on('click', function() {
-      var e, scrollTop;
-      try {
-        scrollTop = $('.post:below-the-fold').first().offset().top - 60;
-        return ($window.wScrollTop || $window.scrollTop)(scrollTop);
-      } catch (_error) {
-        e = _error;
-        return console.error(e);
+    $('.prev-post', $document).on('click', function() {
+      var post, scrollTop;
+      post = $('.post:in-viewport');
+      if (!post.length) {
+        return;
       }
+      if (post.length > 1) {
+        post = post.first();
+      } else {
+        post = $('.post').first();
+      }
+      scrollTop = post.offset().top - 60;
+      return ($window.wScrollTop || $window.scrollTop)(scrollTop);
+    });
+    $('.next-post', $document).on('click', function() {
+      var scrollTop;
+      scrollTop = $('.post:below-the-fold').first().offset().top - 60;
+      return ($window.wScrollTop || $window.scrollTop)(scrollTop);
     });
     $('.read-post', $document).on('click', function() {
       var err, post, posts, scrollTop, _i, _len;

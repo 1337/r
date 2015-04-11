@@ -161,13 +161,21 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'Models', 'Views', 'Co
             settings.remove('pastSubs')
             window.location.reload()
 
+    $('.prev-post', $document).on 'click', ->
+        post = $('.post:in-viewport')
+        unless post.length
+            return
+        if post.length > 1
+            # The end of the previous post is still visible
+            post = post.first()
+        else
+            post = $('.post').first()
+        scrollTop = post.offset().top - 60
+        ($window.wScrollTop or $window.scrollTop)(scrollTop)
+
     $('.next-post', $document).on 'click', ->
-        try
-            scrollTop = $('.post:below-the-fold').first().offset().top - 60
-            # $("html, body").animate(scrollTop: scrollTop + "px")
-            ($window.wScrollTop or $window.scrollTop)(scrollTop)
-        catch e  # :(
-            console.error e
+        scrollTop = $('.post:below-the-fold').first().offset().top - 60
+        ($window.wScrollTop or $window.scrollTop)(scrollTop)
 
     $('.read-post', $document).on 'click', ->
         scrollTop = $window.scrollTop()
