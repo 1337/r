@@ -116,7 +116,7 @@
     };
     toggleMenu = function(bool) {
       var menu;
-      menu = $("#wrapper", $document);
+      menu = $(".wrapper", $document);
       if (bool === void 0) {
         return menu.toggleClass("toggled");
       } else {

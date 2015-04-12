@@ -62,7 +62,7 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'Models', 'Views', 'Co
 
 
     toggleMenu = (bool) ->
-        menu = $("#wrapper", $document)
+        menu = $(".wrapper", $document)
         if bool is undefined
             menu.toggleClass("toggled")
         else
