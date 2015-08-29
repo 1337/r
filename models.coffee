@@ -42,8 +42,8 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'chance'], ($, _, Back
             postId = (post.id or post.data.id)
             if postId in read
                 console.debug "FILTERED #{postId}"
-            else
-                thing.push post
+                post.read = true
+            thing.push post
 
         read.push.apply(read, thing)
         settings.set('readPosts', _.pluck(_.uniq(read), 'id'))

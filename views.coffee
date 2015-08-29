@@ -172,9 +172,13 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
                     collection: replies
                 if @model.get('gilded')
                     @$el.addClass('gilded')
-                id = requestAnimationFrame =>
-                    @getRegion('comments').show(commentsView)
-                    cancelAnimationFrame id
+                if @model.get('read')
+                    @$el.addClass('read')
+                else
+                    # Show comments if unread.
+                    id = requestAnimationFrame =>
+                        @getRegion('comments').show(commentsView)
+                        cancelAnimationFrame id
 
             # Keep reference of itself on the element
             @$el.data('view', this)
