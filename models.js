@@ -55,23 +55,25 @@
       }));
     };
     filterRead = function(posts) {
-      var i, len, post, postId, read, thing;
+      var i, len, oldRead, post, postId, read, readPostIds, thing;
       if (posts == null) {
         posts = [];
       }
       read = settings.get('readPosts', []);
+      oldRead = _.map(read, _.clone);
       thing = [];
       for (i = 0, len = posts.length; i < len; i++) {
         post = posts[i];
         postId = post.id || post.data.id;
         if (indexOf.call(read, postId) >= 0) {
-          console.debug("FILTERED " + postId);
           post.read = true;
         }
         thing.push(post);
       }
       read.push.apply(read, thing);
-      settings.set('readPosts', _.pluck(_.uniq(read), 'id'));
+      readPostIds = _.filter(_.pluck(_.uniq(read), 'id'));
+      readPostIds = _.filter(_.uniq(oldRead.concat(readPostIds)));
+      settings.set('readPosts', readPostIds);
       return thing;
     };
     Models.ReadOnlyModel = (function(superClass) {

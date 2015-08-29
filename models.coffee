@@ -37,16 +37,21 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'chance'], ($, _, Back
 
     filterRead = (posts=[]) ->
         read = settings.get('readPosts', [])
+        oldRead = _.map(read, _.clone)
+
         thing = []
         for post in posts
             postId = (post.id or post.data.id)
             if postId in read
-                console.debug "FILTERED #{postId}"
+                # console.debug "FILTERED #{postId}"
                 post.read = true
             thing.push post
 
         read.push.apply(read, thing)
-        settings.set('readPosts', _.pluck(_.uniq(read), 'id'))
+
+        readPostIds = _.filter(_.pluck(_.uniq(read), 'id'))
+        readPostIds = _.filter(_.uniq(oldRead.concat(readPostIds)))
+        settings.set('readPosts', readPostIds)
         thing
 
 
