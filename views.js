@@ -98,9 +98,7 @@
           var filteredComments, firstChild, hasReplies, ref, ref1, ref2, ref3, replies, repliesView;
           _.defer((function(_this) {
             return function() {
-              var $post, links, op;
-              links = _this.$('a');
-              links.prop('target', '_blank');
+              var $post, op;
               links.each(function(idx, el) {
                 var $el, href;
                 $el = $(el);
@@ -234,6 +232,13 @@
 
       PostView.prototype.onShow = function() {
         var commentsView, id, replies;
+        _.defer((function(_this) {
+          return function() {
+            var links;
+            links = _this.$('a');
+            return links.prop('target', '_blank');
+          };
+        })(this));
         if (settings.get('showcomments', true)) {
           replies = new Models.Comments([], {
             permalink: this.model.get('permalink')

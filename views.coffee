@@ -79,10 +79,6 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
 
             onShow: ->
                 _.defer =>
-                    # don't piss users off
-                    links = @$('a')
-                    links.prop('target', '_blank')
-
                     # Handle relative subreddit links
                     links.each (idx, el) ->
                         $el = $(el)
@@ -164,6 +160,12 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
                 else
                     return url
         onShow: ->
+            _.defer =>
+                # Don't piss users off.
+                # Also, fuck you Brian.
+                links = @$('a')
+                links.prop('target', '_blank')
+
             if settings.get('showcomments', true)
                 replies = new Models.Comments([], {
                     permalink: @model.get('permalink')

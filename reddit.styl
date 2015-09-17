@@ -24,7 +24,7 @@ menu, ol, ul
 .navbar.navbar
     background-color: rgba(0, 150, 136, 0.9)
     border-radius: 0 !important
-    box-shadow: $standard-shadow
+    box-shadow: none
     margin-bottom: 0
 
     .brand
@@ -92,7 +92,8 @@ menu, ol, ul
 
 .post
     background: #fff
-    box-shadow: $standard-shadow
+    border-bottom: 3px rgba(0,0,0,0.2) solid
+    box-shadow: none
     box-sizing: border-box
     display: block
     font-family: 'Roboto', Helveetica, Arial, sans-serif
@@ -107,7 +108,7 @@ menu, ol, ul
         background-color: #ed9c28
 
     &.read
-        opacity: 0.5
+        opacity: 0.4
         overflow-y: hidden
 
         img
@@ -245,15 +246,17 @@ menu, ol, ul
 
     .next-post, .prev-post, .read-post
         cursor: pointer
-        box-shadow: $standard-shadow
+        box-shadow: none
         display: inline-block
         background: #4AA559
         color: #fff
         border-radius: 75px
         font-weight: bold
         font-size: 17px
-        margin: 10px
-        padding: 15px
+        line-height: 60px
+        margin-bottom: 10px
+        padding: 0
+        width: 60px
 
     .prev-post
         margin-right: 5px
@@ -268,6 +271,9 @@ menu, ol, ul
 
 @media (min-width: 768px)
     .navbar
+        &.navbar
+            box-shadow: $standard-shadow
+
         .navbar-brand
             max-width: 660px
 
@@ -275,7 +281,14 @@ menu, ol, ul
         display: none
 
     .post
+        border-bottom: none
         border-radius: 3px
+        box-shadow: $standard-shadow
+
         .post-image
             margin-left: auto
             margin-right: auto
+
+    .fabs
+        .next-post, .prev-post, .read-post
+            box-shadow: $standard-shadow
