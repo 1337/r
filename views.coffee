@@ -19,10 +19,10 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
 
         # console.debug url
         if settings.get('autoload')
-            if url.substr(-5) == ".gifv"
+            if url.substr(-5) is ".gifv"
                 url = url[..-2]
         else
-            if url.substr(-5) == ".gifv"
+            if url.substr(-5) is ".gifv"
                 url = url[..-6] + 'h.jpg'
 
         extension = /(gif|jpe?g|png)$/i
@@ -35,7 +35,6 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
         unless settings.get('autoload')
             url = url.replace(/\.gif$/, 'h.jpg')
 
-        # console.debug url
         url
 
 
@@ -79,19 +78,10 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
 
             onShow: ->
                 _.defer =>
-                    # Handle relative subreddit links
-                    links.each (idx, el) ->
-                        $el = $(el)
-                        href = $el.attr('href')
-                        if href.indexOf('/r/') == 0
-                            $el.attr 'href', '#' + href[2..]
-                            # let the link open same tab
-                            $el.removeAttr('target')
-
                     # Traverse up, find OP's name, and highlight if applicable.
                     $post = @$el.parents('.post')
                     op = $.trim($post.find('.author:first').text())
-                    if @model.get('author') == op
+                    if @model.get('author') is op
                         @$el.addClass('op')
 
                 hasReplies = @model.get('replies')?.data?.children?.length
@@ -165,6 +155,14 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
                 # Also, fuck you Brian.
                 links = @$('a')
                 links.prop('target', '_blank')
+                # Handle relative subreddit links
+                links.each (idx, el) ->
+                    $el = $(el)
+                    href = $el.attr('href')
+                    if href.indexOf('/r/') is 0
+                        $el.attr 'href', '#' + href[2..]
+                        # let the link open same tab
+                        $el.removeAttr('target')
 
             if settings.get('showcomments', true)
                 replies = new Models.Comments([], {
@@ -193,17 +191,17 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
 
         attachHtml: (collectionView, childView, index) ->
             # Make masonry layout whenever a new post is added
-            itemAdded = =>
-                id = requestAnimationFrame =>
+            itemAdded = ->
+                id = requestAnimationFrame ->
                     collectionView.$el.append(childView.el)
                     cancelAnimationFrame id
 
             if childView.$('img')?.length
                 il = imagesLoaded(childView.$el)
-                il?.on 'always', (instance) =>
+                il?.on 'always', (instance) ->
                     itemAdded()
             else # no images in the box
-                _.defer =>
+                _.defer ->
                     itemAdded()
 
 

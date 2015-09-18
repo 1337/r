@@ -99,15 +99,6 @@
           _.defer((function(_this) {
             return function() {
               var $post, op;
-              links.each(function(idx, el) {
-                var $el, href;
-                $el = $(el);
-                href = $el.attr('href');
-                if (href.indexOf('/r/') === 0) {
-                  $el.attr('href', '#' + href.slice(2));
-                  return $el.removeAttr('target');
-                }
-              });
               $post = _this.$el.parents('.post');
               op = $.trim($post.find('.author:first').text());
               if (_this.model.get('author') === op) {
@@ -236,7 +227,16 @@
           return function() {
             var links;
             links = _this.$('a');
-            return links.prop('target', '_blank');
+            links.prop('target', '_blank');
+            return links.each(function(idx, el) {
+              var $el, href;
+              $el = $(el);
+              href = $el.attr('href');
+              if (href.indexOf('/r/') === 0) {
+                $el.attr('href', '#' + href.slice(2));
+                return $el.removeAttr('target');
+              }
+            });
           };
         })(this));
         if (settings.get('showcomments', true)) {
@@ -281,28 +281,22 @@
 
       ContentView.prototype.attachHtml = function(collectionView, childView, index) {
         var il, itemAdded, ref;
-        itemAdded = (function(_this) {
-          return function() {
-            var id;
-            return id = requestAnimationFrame(function() {
-              collectionView.$el.append(childView.el);
-              return cancelAnimationFrame(id);
-            });
-          };
-        })(this);
+        itemAdded = function() {
+          var id;
+          return id = requestAnimationFrame(function() {
+            collectionView.$el.append(childView.el);
+            return cancelAnimationFrame(id);
+          });
+        };
         if ((ref = childView.$('img')) != null ? ref.length : void 0) {
           il = imagesLoaded(childView.$el);
-          return il != null ? il.on('always', (function(_this) {
-            return function(instance) {
-              return itemAdded();
-            };
-          })(this)) : void 0;
+          return il != null ? il.on('always', function(instance) {
+            return itemAdded();
+          }) : void 0;
         } else {
-          return _.defer((function(_this) {
-            return function() {
-              return itemAdded();
-            };
-          })(this));
+          return _.defer(function() {
+            return itemAdded();
+          });
         }
       };
 

@@ -36,7 +36,7 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'Models'], ($, _, Back
 
         keysInCluster = []
         _.each cluster, (val, key) ->
-            if val == clusterId
+            if val is clusterId
                 keysInCluster.push key
 
         # Transform into {"sub": ..., "link": ...}
@@ -45,7 +45,7 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'Models'], ($, _, Back
             if val isnt sub
                 res.push {sub: val, link: val}
 
-        if count == 0
+        if count is 0
             return res
         else
             return res[..count-1]
