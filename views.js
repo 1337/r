@@ -139,18 +139,17 @@
 
       CommentsView.prototype.attachHtml = function(collectionView, childView, index) {
         var il, itemAdded, ref;
-        itemAdded = (function(_this) {
-          return function() {
-            return collectionView.$el.append(childView.el);
-          };
-        })(this);
+        itemAdded = function() {
+          var links;
+          collectionView.$el.append(childView.el);
+          links = collectionView.$('a');
+          return links.attr('target', '_blank');
+        };
         if ((ref = childView.$('img')) != null ? ref.length : void 0) {
           il = imagesLoaded(childView.$el);
-          return il != null ? il.on('always', (function(_this) {
-            return function(instance) {
-              return itemAdded();
-            };
-          })(this)) : void 0;
+          return il != null ? il.on('always', function(instance) {
+            return itemAdded();
+          }) : void 0;
         } else {
           return itemAdded();
         }
@@ -227,7 +226,7 @@
           return function() {
             var links;
             links = _this.$('a');
-            links.prop('target', '_blank');
+            links.attr('target', '_blank');
             return links.each(function(idx, el) {
               var $el, href;
               $el = $(el);

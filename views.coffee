@@ -17,7 +17,6 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
 
         url = url.replace('i.imgur', 'imgur').replace('imgur', 'i.imgur')
 
-        # console.debug url
         if settings.get('autoload')
             if url.substr(-5) is ".gifv"
                 url = url[..-2]
@@ -104,12 +103,14 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
 
         # Make masonry layout whenever a new post is added
         attachHtml: (collectionView, childView, index) ->
-            itemAdded = =>
+            itemAdded = ->
                 collectionView.$el.append(childView.el)
+                links = collectionView.$('a')
+                links.attr('target', '_blank')
 
             if childView.$('img')?.length
                 il = imagesLoaded(childView.$el)
-                il?.on 'always', (instance) =>
+                il?.on 'always', (instance) ->
                     itemAdded()
             else
                 itemAdded()
@@ -154,7 +155,7 @@ define ['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], ($, _, 
                 # Don't piss users off.
                 # Also, fuck you Brian.
                 links = @$('a')
-                links.prop('target', '_blank')
+                links.attr('target', '_blank')
                 # Handle relative subreddit links
                 links.each (idx, el) ->
                     $el = $(el)
