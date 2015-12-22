@@ -1,63 +1,63 @@
 require = top.require || null
 
 require.config
-    baseUrl: '/static/js'
+    baseUrl: 'js/'
     paths:
-        'app': '../../r/app',
-        'Models': '../../r/models',
-        'Views': '../../r/views',
-        'Controllers': '../../r/controllers',
-        'reddit_related': '/r/reddit_related',
+        'app': 'app',
+        'Models': 'models',
+        'Views': 'views',
+        'Controllers': 'controllers',
+        'reddit_related': 'reddit_related',
         'backbone': [
             'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min',
-            'backbone/backbone'
+            '../lib/backbone/backbone'
         ],
         'bootstrap': [
             'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min',
-            'bootstrap/dist/js/bootstrap.min'
+            '../lib/bootstrap/dist/js/bootstrap.min'
         ],
         'bootstrap-material-design': [
             'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min',
-            'bootstrap-material-design/dist/js/material.min'
+            '../lib/bootstrap-material-design/dist/js/material.min'
         ],
         'chance': 'chance/chance'
         'eventemitter': [
             'https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/4.2.11/EventEmitter.min',
-            'eventEmitter/EventEmitter.min'
+            '../lib/eventEmitter/EventEmitter.min'
         ],
-        'eventie': 'eventie/eventie',
+        'eventie': '../lib/eventie/eventie',
         'imagesloaded': [
             # 'https://cdn.jsdelivr.net/imagesloaded/3.1.6/imagesloaded.min',
-            'imagesloaded/imagesloaded.pkgd'
+            '../lib/imagesloaded/imagesloaded.pkgd'
         ],
         'jquery': [
             'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min',
-            'jquery/dist/jquery.min'
+            '../lib/jquery/dist/jquery.min'
         ],
         'jquery-removestyle': 'jquery.removestyle',
         'jquery-scrollstopped': 'jquery.scrollstopped',
         'jquery-scrolltop': 'jquery.scrolltop',
         'jquery-touchswipe': [
             'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min',
-            'jquery.touchswipe'
+            '../lib/jquery.touchswipe'
         ],
         'jquery-viewport': 'jquery.viewport.min',
         'marionette': [
             'https://cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.3.2/backbone.marionette.min',
-            'marionette/lib/backbone.marionette'
+            '../lib/marionette/lib/backbone.marionette'
         ],
         'masonry': [
             'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min',
-            'masonry/dist/masonry.pkgd.min'
+            '../lib/masonry/dist/masonry.pkgd.min'
         ],
         'modernizr': [
             'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min',
-            'modernizr/modernizr'
+            '../lib/modernizr/modernizr'
         ],
         'requestanimationframe': 'requestanimationframe',
         'underscore': [
             'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
-            'underscore/underscore'
+            '../lib/underscore/underscore'
         ],
         'underscore-mixins': 'underscore.mixins',
         'uri': 'uri'

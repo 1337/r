@@ -5,7 +5,7 @@
     hasProp = {}.hasOwnProperty,
     slice = [].slice;
 
-  define(['jquery', 'underscore', 'backbone', 'marionette', 'chance'], function($, _, Backbone, Marionette, chance) {
+  define(['jquery', 'underscore', 'backbone', 'marionette'], function($, _, Backbone, Marionette) {
     var Models, Settings, filterRead, settings;
     Models = {};
     Settings = (function() {

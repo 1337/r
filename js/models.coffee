@@ -1,4 +1,4 @@
-define ['jquery', 'underscore', 'backbone', 'marionette', 'chance'], ($, _, Backbone, Marionette, chance) ->
+define ['jquery', 'underscore', 'backbone', 'marionette'], ($, _, Backbone, Marionette) ->
 
     Models = {}
 
