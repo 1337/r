@@ -9,55 +9,54 @@ require.config
         'Controllers': 'controllers',
         'reddit_related': 'reddit_related',
         'backbone': [
-            'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min',
-            '../lib/backbone/backbone'
+            '../lib/backbone/backbone',
+            'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min'
         ],
         'bootstrap': [
-            'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min',
-            '../lib/bootstrap/dist/js/bootstrap.min'
+            '../lib/bootstrap/dist/js/bootstrap.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min'
         ],
         'bootstrap-material-design': [
-            'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min',
-            '../lib/bootstrap-material-design/dist/js/material.min'
+            '../lib/bootstrap-material-design/dist/js/material.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min'
         ],
         'chance': 'chance/chance'
         'eventemitter': [
-            'https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/4.2.11/EventEmitter.min',
-            '../lib/eventEmitter/EventEmitter.min'
+            '../lib/eventEmitter/EventEmitter.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/4.2.11/EventEmitter.min'
         ],
         'eventie': '../lib/eventie/eventie',
         'imagesloaded': [
-            # 'https://cdn.jsdelivr.net/imagesloaded/3.1.6/imagesloaded.min',
             '../lib/imagesloaded/imagesloaded.pkgd'
         ],
         'jquery': [
-            'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min',
-            '../lib/jquery/dist/jquery.min'
+            '../lib/jquery/dist/jquery.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min'
         ],
         'jquery-removestyle': 'jquery.removestyle',
         'jquery-scrollstopped': 'jquery.scrollstopped',
         'jquery-scrolltop': 'jquery.scrolltop',
         'jquery-touchswipe': [
-            'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min',
-            '../lib/jquery.touchswipe'
+            '../lib/jquery.touchswipe',
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min'
         ],
         'jquery-viewport': 'jquery.viewport.min',
         'marionette': [
-            'https://cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.3.2/backbone.marionette.min',
-            '../lib/marionette/lib/backbone.marionette'
+            '../lib/marionette/lib/backbone.marionette',
+            'https://cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.3.2/backbone.marionette.min'
         ],
         'masonry': [
-            'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min',
-            '../lib/masonry/dist/masonry.pkgd.min'
+            '../lib/masonry/dist/masonry.pkgd.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min'
         ],
         'modernizr': [
-            'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min',
-            '../lib/modernizr/modernizr'
+            '../lib/modernizr/modernizr',
+            'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min'
         ],
         'requestanimationframe': 'requestanimationframe',
         'underscore': [
-            'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
-            '../lib/underscore/underscore'
+            '../lib/underscore/underscore',
+            'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min'
         ],
         'underscore-mixins': 'underscore.mixins',
         'uri': 'uri'
@@ -65,7 +64,7 @@ require.config
         'app':
             deps: [
                 'modernizr',
-                'bootstrap', 'uri', 'requestanimationframe',
+                'uri', 'requestanimationframe',
                 'jquery-viewport', 'jquery-removestyle', 'jquery-scrollstopped',
                 'jquery-scrolltop',
                 'reddit_related', 'underscore-mixins'
