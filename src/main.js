@@ -12,53 +12,40 @@ require.config({
     'Controllers': 'controllers',
     'reddit_related': 'reddit_related',
     'backbone': [
-      '../lib/backbone/backbone',
-      'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min'
+      '../../node_modules/backbone/backbone'
     ],
     'bootstrap': [
-      '../lib/bootstrap/dist/js/bootstrap.min',
-      'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min'
+      '../../node_modules/bootstrap/dist/js/bootstrap.min'
     ],
     'bootstrap-material-design': [
-      '../lib/bootstrap-material-design/dist/js/material.min',
-      'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min'
+      '../../node_modules/bootstrap-material-design/dist/js/material.min'
     ],
     'chance': 'chance/chance',
     'eventemitter': [
-      '../lib/eventEmitter/EventEmitter.min',
-      'https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/4.2.11/EventEmitter.min'
+      '../../node_modules/eventEmitter/EventEmitter.min'
     ],
-    'eventie': '../lib/eventie/eventie',
+    'eventie': '../../node_modules/eventie/eventie',
     'imagesloaded': [
-      '../lib/imagesloaded/imagesloaded.pkgd'
+      '../../node_modules/imagesloaded/imagesloaded.pkgd'
     ],
     'jquery': [
-      '../lib/jquery/dist/jquery.min',
-      'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min'
+      '../../node_modules/jquery/dist/jquery'
     ],
     'jquery-removestyle': 'jquery.removestyle',
     'jquery-scrollstopped': 'jquery.scrollstopped',
     'jquery-scrolltop': 'jquery.scrolltop',
     'jquery-touchswipe': [
-      '../lib/jquery.touchswipe',
-      'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min'
+      '../../node_modules/jquery.touchswipe'
     ],
     'jquery-viewport': 'jquery.viewport.min',
     'marionette': [
-      '../lib/marionette/lib/backbone.marionette',
-      'https://cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.3.2/backbone.marionette.min'
+      '../../node_modules/backbone.marionette/lib/backbone.marionette'
     ],
     'masonry': [
-      '../lib/masonry/dist/masonry.pkgd.min',
-      'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min'
-    ],
-    'modernizr': [
-      '../lib/modernizr/modernizr',
-      'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min'
+      '../../node_modules/masonry/dist/masonry.pkgd.min'
     ],
     'underscore': [
-      '../lib/underscore/underscore',
-      'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min'
+      '../../node_modules/underscore/underscore'
     ],
     'underscore-mixins': 'underscore.mixins',
     'uri': 'uri'
@@ -66,7 +53,6 @@ require.config({
   shim: {
     'app': {
       deps: [
-        'modernizr',
         'uri',
         'jquery-viewport', 'jquery-removestyle', 'jquery-scrollstopped',
         'jquery-scrolltop',
@@ -84,7 +70,8 @@ require.config({
       deps: ['jquery', 'bootstrap']
     },
     'imagesloaded': {
-      deps: ['eventie', 'eventemitter'],
+      // deps: ['eventie', 'eventemitter'],
+      deps: ['eventie'],
       exports: 'imagesLoaded'
     },
     'jquery-removestyle': {

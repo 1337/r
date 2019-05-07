@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "bower": "bower",
+    "gulp": "gulp",
     "webpack": "webpack",
     "test": "karma start --single-run"
   },
@@ -13,16 +13,33 @@
     "url": "https://github.com/1337/r"
   },
   "author": "",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/1337/r/issues"
   },
   "homepage": "https://github.com/1337/r",
   "dependencies": {
+    "backbone.marionette": "^2.3.2",
+    "bootstrap": "^3.3.7",
+    "bootstrap-material-design": "^0.3.0",
     "bower": "^1.7.1",
-    "lodash": "^3.1.0"
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.3.0",
+    "html5shiv": "^3.7.3",
+    "imagesloaded": "^3.1.8",
+    "jquery-color": "git://github.com/jquery/jquery-color.git#9e5e04c1c4ee66427fbe04cfce8155b76748ca64",
+    "localforage": "^1.2.10",
+    "lodash": "^3.1.0",
+    "masonry-layout": "^3.2.3",
+    "material-design-lite": "^1.0.6",
+    "normalize.css": "^3.0.3",
+    "requirejs": "^2.1.22",
+    "underscore.string": "^3.0.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.5",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2"
   }
