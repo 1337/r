@@ -80,12 +80,12 @@ define(['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], functio
 
     var Cls = (Views.CommentsView = class CommentsView extends Marionette.CollectionView {
         static initClass() {
-            this.prototype.template = "#comments_template";
+            this.prototype.template = "#comments-template";
             this.prototype.collection = null;
             this.prototype.childView = (function() {
                 Cls = class extends Marionette.LayoutView {
                     static initClass() {
-                        this.prototype.template = "#comment_template";
+                        this.prototype.template = "#comment-template";
                         this.prototype.className = "reply";
                         this.prototype.regions =
                           {replies: '.replies'};
@@ -163,7 +163,7 @@ define(['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], functio
 
     Cls = (Views.MenuView = class MenuView extends Marionette.LayoutView {
         static initClass() {
-            this.prototype.template = '#menu_template';
+            this.prototype.template = '#menu-template';
             this.prototype.events = {
                 "click .navbar-toggle"() {
                     return (typeof App !== 'undefined' && App !== null ? App.commands.execute("toggleMenu") : undefined);
@@ -177,7 +177,7 @@ define(['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], functio
     Cls = (Views.PostView = class PostView extends Marionette.LayoutView {
         static initClass() {
             this.prototype.className = 'post';
-            this.prototype.template = '#post_template';
+            this.prototype.template = '#post-template';
             this.prototype.regions =
               {comments: '.comments'};
             this.prototype.events = {
@@ -258,7 +258,7 @@ define(['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], functio
 
     Cls = (Views.ContentView = class ContentView extends Marionette.CompositeView {
         static initClass() {
-            this.prototype.template = '#content_template';
+            this.prototype.template = '#content-template';
             this.prototype.childView = Views.PostView;
             this.prototype.childViewContainer = ".posts";
         }
@@ -289,7 +289,7 @@ define(['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], functio
             this.prototype.childView = (function() {
                 Cls = class extends Marionette.ItemView {
                     static initClass() {
-                        this.prototype.template = '#history_template';
+                        this.prototype.template = '#history-template';
                         this.prototype.tagName = 'li';
                     }
                 };
@@ -305,7 +305,7 @@ define(['jquery', 'underscore', 'marionette', 'Models', 'imagesloaded'], functio
 
     Cls = (Views.SettingsView = class SettingsView extends Marionette.LayoutView {
         static initClass() {
-            this.prototype.template = '#settings_template';
+            this.prototype.template = '#settings-template';
             this.prototype.className = 'container';
             this.prototype.ui = {
                 'minscore': '#minscore',

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' ng-app class='no-js' style='*display:none !important;'>
+<html lang='en' class='no-js'>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
@@ -9,10 +9,10 @@
     <meta name='description' content=''>
     <meta name='viewport' content='width=device-width,initial-scale=1,user-scalable=yes'>
 
-    <link rel='shortcut icon' href='/favicon.ico'>
-    <link rel='stylesheet' href='lib/normalize.css/normalize.css'>
+    <link rel='shortcut icon' href='/src/favicon.ico'>
+    <link rel='stylesheet' href='../lib/normalize.css/normalize.css'>
     <link rel="stylesheet" href="css/bootstrap.custom.min.css"/>
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/freelancer.css"/>
     <link rel="stylesheet" href="css/simple-sidebar.css"/>
     <link rel="stylesheet" href="css/reddit.css"/>
@@ -20,7 +20,7 @@
 
     <title>/r/</title>
 
-    <script src="lib/requirejs/require.js" data-main="main.js"></script>
+    <script src="../lib/requirejs/require.js" data-main="main.js"></script>
 </head>
 <body>
 <nav class="menu navbar navbar-static-top navbar-fixed-top"></nav>
@@ -67,11 +67,11 @@
     <div class="next-post"><i class="fa fa-fw fa-step-forward"></i></div>
 </div>
 
-<script type="text/template" id="history_template">
+<script type="text/template" id="history-template">
     <a href="#/<%= link %>" title="<%= link %>"><%- sub %></a>
 </script>
 
-<script type="text/template" id="menu_template">
+<script type="text/template" id="menu-template">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle">
@@ -86,11 +86,11 @@
         </div>
     </div>
 </script>
-<script type="text/template" id="content_template">
+<script type="text/template" id="content-template">
     <div class="posts"></div>
 </script>
 
-<script type="text/template" id="comment_template">
+<script type="text/template" id="comment-template">
     <span class="pull-right label label-default"><%- score %></span>
     <%= body() %>
     <div class="clear"></div>
@@ -103,7 +103,7 @@
     <div class="replies"></div>
 </script>
 
-<script type="text/template" id="post_template">
+<script type="text/template" id="post-template">
     <div style="margin-bottom: 13px">
             <span class="pull-right points label label-success">
                 <%- score %>
@@ -146,7 +146,7 @@
     <div class="comments"></div>
 </script>
 
-<script type="text/template" id="settings_template">
+<script type="text/template" id="settings-template">
     <form class="settings-form form-horizontal">
         <div class="form-group">
             <label class="col-sm-4 control-label">
