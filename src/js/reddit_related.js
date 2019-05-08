@@ -7,7 +7,7 @@
  *
  * https://raw.github.com/1337/ajverster.github.com/master/data/RedditMatrixList_MarkovClusters.tab
   */
-var redditMarkovClusters = {
+module.exports = {
     "coding": 1,
     "programming": 1,
     "linux": 1,
